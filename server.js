@@ -6,6 +6,7 @@ const path = require('path'); // Importa o módulo 'path' para manipulação de 
 const app = express();
 const port = 4000;
 
+
 // Importa as rotas
 const usuarioRotas = require('./Routes/UsuarioRoutes');
 const vagasRotas = require('./Routes/VagasRoutes');
