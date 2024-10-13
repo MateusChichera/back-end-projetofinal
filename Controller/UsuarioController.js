@@ -34,6 +34,14 @@ class UsuarioController {
         }
     }
     
+    async obter(req,res){
+        try{
+            const listaUsuarios = await  UsuarioModel.obterTodos();
+            return res.status(200).json(listaUsuarios);
+        }catch(error){
+            return res.status(500).json({message:"Erro ao obter usuarios"});
+        }
+    }
     
 
     async Excluir(req, res) {

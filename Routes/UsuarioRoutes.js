@@ -10,5 +10,6 @@ router.post('/', upload, usuarioC.Inserir);
 router.post('/login', usuarioC.Autenticar);                
 router.delete('/:id', usuarioC.Excluir);  
 router.get('/curriculo/:id', usuarioC.obterCurriculo);
+router.get('/', usuarioC.obter);
 
 module.exports = router;

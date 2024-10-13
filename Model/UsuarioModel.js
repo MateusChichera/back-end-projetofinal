@@ -37,6 +37,11 @@ class UsuarioModel {
         const result = await db.executaComandoNonQuery(sql, params);
         return result.insertId ? new UsuarioModel({ ...usuario, usu_id: result.insertId }) : null;
     }
+    static async obterTodos() {
+        const sql = 'SELECT * FROM usuario';
+        const result = await db.executaComando(sql);
+        return result
+    }
 
     // Método para obter currículo por ID de usuário
     static async obterCurriculo(usu_id) {
