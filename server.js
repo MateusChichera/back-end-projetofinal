@@ -17,7 +17,12 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads'))); // Configu
 
 // Middlewares
 app.use(express.json());
-app.use(cors());
+app.use(
+    cors({
+      credentials: true,
+      origin: ["http://localhost:3000", "http://192.168.0.101:3000"],
+    })
+  );
 app.use(cookieParser());
 
 // Configuração das rotas
